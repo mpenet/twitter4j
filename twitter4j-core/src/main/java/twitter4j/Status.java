@@ -65,6 +65,14 @@ public interface Status extends Comparable<Status>, TwitterResponse,
     boolean isTruncated();
 
     /**
+     * Test if the status contains links that could be sensitive
+     *
+     * @return if the status contains links that could be sensitive
+     * @since Twitter4J 2.2.7
+     */
+    boolean isPossiblySensitive();
+
+    /**
      * Returns the in_reply_tostatus_id
      *
      * @return the in_reply_tostatus_id

@@ -46,6 +46,7 @@ import static twitter4j.internal.util.z_T4JInternalParseUtil.getUnescapedString;
     private String text;
     private String source;
     private boolean isTruncated;
+    private boolean isPossiblySensitive;
     private long inReplyToStatusId;
     private long inReplyToUserId;
     private boolean isFavorited;
@@ -80,10 +81,10 @@ import static twitter4j.internal.util.z_T4JInternalParseUtil.getUnescapedString;
         super();
         init(json);
     }
-    
+
     /* Only for serialization purposes. */
     /*package*/ StatusJSONImpl() {
-    	
+
     }
 
     private void init(JSONObject json) throws TwitterException {
@@ -92,6 +93,7 @@ import static twitter4j.internal.util.z_T4JInternalParseUtil.getUnescapedString;
         source = getUnescapedString("source", json);
         createdAt = getDate("created_at", json);
         isTruncated = getBoolean("truncated", json);
+        isPossiblySensitive = getBoolean("possibly_sensitive", json);
         inReplyToStatusId = getLong("in_reply_to_status_id", json);
         inReplyToUserId = getLong("in_reply_to_user_id", json);
         isFavorited = getBoolean("favorited", json);
@@ -244,6 +246,13 @@ import static twitter4j.internal.util.z_T4JInternalParseUtil.getUnescapedString;
      */
     public boolean isTruncated() {
         return isTruncated;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public boolean isPossiblySensitive() {
+        return isPossiblySensitive;
     }
 
     /**
@@ -434,6 +443,7 @@ import static twitter4j.internal.util.z_T4JInternalParseUtil.getUnescapedString;
                 ", text='" + text + '\'' +
                 ", source='" + source + '\'' +
                 ", isTruncated=" + isTruncated +
+                ", isPossiblySensitive=" + isPossiblySensitive +
                 ", inReplyToStatusId=" + inReplyToStatusId +
                 ", inReplyToUserId=" + inReplyToUserId +
                 ", isFavorited=" + isFavorited +
