@@ -94,7 +94,7 @@
     </mailingLists>
     <dependencies>
         <dependency>
-            <groupId>org.twitter4j</groupId>
+            <groupId>cc.qbits</groupId>
             <artifactId>twitter4j-core</artifactId>
             <version>2.2.7-SNAPSHOT</version>
         </dependency>
