@@ -74,7 +74,7 @@ class ConfigurationBase implements Configuration, java.io.Serializable {
     private boolean includeRTsEnabled = true;
 
     private boolean includeEntitiesEnabled = true;
-    
+
     private boolean includeMyRetweetEnabled = true;
 
     private boolean jsonStoreEnabled;
@@ -102,12 +102,12 @@ class ConfigurationBase implements Configuration, java.io.Serializable {
     private static final String DEFAULT_OAUTH_ACCESS_TOKEN_URL = "http://api.twitter.com/oauth/access_token";
     private static final String DEFAULT_OAUTH_AUTHENTICATION_URL = "http://api.twitter.com/oauth/authenticate";
 
-    private static final String DEFAULT_REST_BASE_URL = "http://api.twitter.com/1/";
-    private static final String DEFAULT_SEARCH_BASE_URL = "http://search.twitter.com/";
-    private static final String DEFAULT_STREAM_BASE_URL = "https://stream.twitter.com/1/";
-    private static final String DEFAULT_USER_STREAM_BASE_URL = "https://userstream.twitter.com/2/";
-    private static final String DEFAULT_SITE_STREAM_BASE_URL = "https://sitestream.twitter.com";
-    private static final String DEFAULT_UPLOAD_BASE_URL = "http://upload.twitter.com/1/";
+    private static final String DEFAULT_REST_BASE_URL = "http://api.twitter.com/1.1/";
+    private static final String DEFAULT_SEARCH_BASE_URL = "http://api.twitter.com/1.1/search/";
+    private static final String DEFAULT_STREAM_BASE_URL = "https://stream.twitter.com/1.1/";
+    private static final String DEFAULT_USER_STREAM_BASE_URL = "https://userstream.twitter.com/1.1/";
+    private static final String DEFAULT_SITE_STREAM_BASE_URL = "https://sitestream.twitter.com/1.1/";
+    private static final String DEFAULT_UPLOAD_BASE_URL = "http://api.twitter.com/";
 
     private boolean IS_DALVIK;
     private boolean IS_GAE;
@@ -646,7 +646,7 @@ class ConfigurationBase implements Configuration, java.io.Serializable {
     protected final void setIncludeEntitiesEnbled(boolean enabled) {
         this.includeEntitiesEnabled = enabled;
     }
-    
+
     public boolean isIncludeMyRetweetEnabled() {
 		return this.includeMyRetweetEnabled;
 	}
